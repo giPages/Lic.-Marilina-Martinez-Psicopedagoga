@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lic. Marilina Martínez — Psicopedagoga</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --crimson:    #8B1A2F;
+  --rose:       #C4556A;
+  --rosepale:   #E8A0AD;
+  --blush:      #F5DDE2;
+  --cream:      #FDF8F5;
+  --ivory:      #FAF3EE;
+  --gold:       #B8945A;
+  --goldlight:  #D4AF7A;
+  --darkbrown:  #2C1A12;
+  --brown:      #5C3A2A;
+  --text:       #2C1A12;
+  --textmid:    #6B4A3A;
+  --textlight:  #9B7A6A;
+  --shadow:     rgba(44,26,18,0.12);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--text);font-family:'Lato',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* ═══ NAV ═══ */
+nav{position:sticky;top:0;z-index:200;background:rgba(253,248,245,0.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(196,85,106,0.18);}
+.nav-inner{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:64px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--crimson);letter-spacing:0.04em;}
+.nav-logo em{font-style:italic;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--textmid);text-decoration:none;font-weight:400;transition:color 0.2s;}
+.nav-links a:hover{color:var(--crimson);}
+.nav-wa{background:var(--crimson);color:#fff;padding:9px 20px;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:700;transition:background 0.2s;}
+.nav-wa:hover{background:var(--rose);}
+@media(max-width:760px){.nav-links{display:none;}}
+
+/* ═══ HERO ═══ */
+.hero{
+  position:relative;min-height:100vh;
+  background:radial-gradient(ellipse at 72% 50%, rgba(139,26,47,0.07) 0%, transparent 55%),
+             radial-gradient(ellipse at 10% 80%, rgba(184,148,90,0.06) 0%, transparent 45%),
+             var(--ivory);
+  overflow:hidden;display:flex;align-items:center;
+}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--rose),var(--gold),var(--crimson));}
+.hero-deco-l{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--crimson),var(--gold),var(--rose),transparent);opacity:0.25;}
+
+.hero-content{max-width:1080px;margin:auto;display:flex;align-items:center;gap:80px;padding:100px 28px 80px;flex-wrap:wrap;position:relative;z-index:2;}
+
+.hero-photo-frame{position:relative;flex-shrink:0;}
+.hero-photo-frame::before{content:'';position:absolute;top:18px;left:18px;right:-18px;bottom:-18px;border:1px solid var(--goldlight);z-index:0;}
+.hero-photo-frame::after{content:'';position:absolute;top:-6px;left:-6px;right:6px;bottom:6px;border:2px solid var(--crimson);opacity:0.2;z-index:0;}
+.hero-photo{width:300px;object-fit:cover;object-position:top center;display:block;position:relative;z-index:1;filter:sepia(6%) contrast(1.04);}
+@media(max-width:760px){.hero-photo{width:230px;}.hero-photo-frame::before,.hero-photo-frame::after{display:none;}}
+
+.hero-text{flex:1;min-width:280px;}
+.eyebrow{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;height:1px;width:30px;background:var(--goldlight);}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--darkbrown);margin-bottom:6px;}
+.hero-name em{font-style:italic;color:var(--crimson);}
+.hero-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--rose);margin-bottom:22px;}
+.hero-tagline{font-size:0.93rem;line-height:1.9;color:var(--textmid);border-left:3px solid var(--rosepale);padding-left:18px;margin-bottom:30px;font-style:italic;}
+.badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:34px;}
+.badge{background:rgba(139,26,47,0.07);border:1px solid rgba(139,26,47,0.15);padding:5px 13px;font-size:0.7rem;letter-spacing:0.08em;color:var(--crimson);font-weight:700;text-transform:uppercase;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--crimson);color:#fff;padding:13px 28px;text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.25s;box-shadow:0 6px 22px rgba(139,26,47,0.28);display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{background:var(--rose);transform:translateY(-2px);}
+.btn-s{border:1.5px solid var(--crimson);color:var(--crimson);padding:13px 28px;text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;}
+.btn-s:hover{background:var(--blush);}
+
+/* Rose SVG ornament helper */
+.rose-svg{position:absolute;pointer-events:none;}
+
+/* ═══ BAND ═══ */
+.band{height:10px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--rosepale),var(--gold),var(--crimson));}
+.band-thin{height:1px;background:linear-gradient(90deg,transparent,rgba(196,85,106,0.3),transparent);}
+
+/* ═══ SECTION ═══ */
+.sec{max-width:1080px;margin:0 auto;padding:80px 28px;}
+.sec-hd{text-align:center;margin-bottom:52px;}
+.sec-ey{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px;}
+.sec-ti{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;color:var(--darkbrown);line-height:1.2;}
+.sec-ti em{font-style:italic;color:var(--crimson);}
+.sec-rule{width:56px;height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold));margin:16px auto 0;}
+
+/* ═══ SOBRE ═══ */
+.bg-ivory{background:var(--ivory);border-top:1px solid rgba(196,85,106,0.1);border-bottom:1px solid rgba(196,85,106,0.1);}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+@media(max-width:700px){.sobre-grid{grid-template-columns:1fr;gap:32px;}}
+.sobre-intro{font-size:0.93rem;line-height:2;color:var(--textmid);}
+.sobre-intro strong{color:var(--crimson);font-weight:700;}
+.sobre-intro p{margin-bottom:16px;}
+.quote-box{margin-top:24px;padding:18px 20px;background:rgba(139,26,47,0.05);border-left:3px solid var(--crimson);}
+.quote-box p{font-family:'Playfair Display',serif;font-style:italic;font-size:0.98rem;color:var(--crimson);line-height:1.8;}
+.cosas{list-style:none;counter-reset:c;}
+.cosas li{counter-increment:c;display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(196,85,106,0.1);font-size:0.87rem;line-height:1.7;color:var(--textmid);}
+.cosas li:last-child{border:none;}
+.cosas li::before{content:counter(c,decimal-leading-zero);font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--rosepale);flex-shrink:0;line-height:1.55;}
+
+/* ═══ SERVICIOS ═══ */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:26px;}
+.svc-card{background:var(--ivory);border:1px solid rgba(196,85,106,0.14);border-top:3px solid var(--crimson);padding:34px 28px;transition:transform 0.3s,box-shadow 0.3s;}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(139,26,47,0.1);}
+.svc-icon{font-size:1.9rem;margin-bottom:16px;display:block;}
+.svc-card h3{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:500;color:var(--darkbrown);margin-bottom:10px;}
+.svc-card p{font-size:0.84rem;line-height:1.8;color:var(--textlight);}
+.svc-tag{display:inline-block;font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);font-weight:700;border:1px solid var(--rosepale);padding:3px 10px;margin-top:13px;}
+
+/* ═══ FORMACIÓN ═══ */
+.bg-dark{background:var(--darkbrown);position:relative;overflow:hidden;}
+.bg-dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%, rgba(139,26,47,0.4) 0%, transparent 50%),radial-gradient(ellipse at 80% 20%, rgba(184,148,90,0.15) 0%, transparent 45%);pointer-events:none;}
+.bg-dark .sec-ey{color:var(--goldlight);}
+.bg-dark .sec-ti{color:#fff;}
+.bg-dark .sec-ti em{color:var(--rosepale);}
+.bg-dark .sec-rule{background:linear-gradient(90deg,var(--rose),var(--gold));}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:700px){.form-grid{grid-template-columns:1fr;}}
+.fi{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-left:3px solid var(--rose);padding:18px 20px;display:flex;gap:13px;align-items:flex-start;}
+.fi-ic{color:var(--goldlight);font-size:1.05rem;flex-shrink:0;margin-top:2px;}
+.fi-tx{font-size:0.84rem;line-height:1.7;color:rgba(255,255,255,0.72);}
+.fi-tx strong{display:block;color:#fff;font-weight:700;font-size:0.86rem;margin-bottom:2px;}
+
+/* ═══ CONSULTAS ═══ */
+.info-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin-bottom:36px;}
+.info-card{background:var(--ivory);border:1px solid rgba(196,85,106,0.14);padding:26px 20px;text-align:center;position:relative;}
+.info-card::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--rose),transparent);}
+.ic-lb{font-size:0.63rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--textlight);margin-bottom:7px;}
+.ic-vl{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:400;color:var(--crimson);}
+.ic-sb{font-size:0.76rem;color:var(--textlight);margin-top:3px;}
+.pay-row{display:flex;gap:11px;flex-wrap:wrap;}
+.pay-chip{border:1px solid rgba(196,85,106,0.2);padding:10px 18px;font-size:0.82rem;color:var(--textmid);display:flex;align-items:center;gap:8px;}
+.pay-dot{width:7px;height:7px;border-radius:50%;background:var(--crimson);flex-shrink:0;}
+
+/* ═══ FORM TURNO ═══ */
+.bg-turno{background:var(--ivory);border-top:1px solid rgba(196,85,106,0.1);position:relative;overflow:hidden;}
+.bg-turno::before{content:'';position:absolute;left:-80px;bottom:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(139,26,47,0.06),transparent 70%);pointer-events:none;}
+.form-box{background:#fff;border:1px solid rgba(196,85,106,0.14);max-width:700px;margin:0 auto;padding:48px 42px;position:relative;}
+.form-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--rose));}
+@media(max-width:580px){.form-box{padding:30px 20px;}}
+.form-title{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:400;color:var(--darkbrown);margin-bottom:5px;text-align:center;}
+.form-title em{font-style:italic;color:var(--crimson);}
+.form-sub{font-size:0.83rem;color:var(--textlight);text-align:center;margin-bottom:34px;}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.fg label{font-size:0.67rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--textlight);font-weight:700;}
+.fg input,.fg select,.fg textarea{background:#fdf9f7;border:1px solid rgba(196,85,106,0.22);padding:12px 15px;font-family:'Lato',sans-serif;font-size:0.89rem;color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s;-webkit-appearance:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--crimson);box-shadow:0 0 0 3px rgba(139,26,47,0.08);}
+.fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239B7A6A'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-size:15px;padding-right:40px;cursor:pointer;}
+.fg textarea{min-height:85px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+.r-row{display:flex;gap:9px;flex-wrap:wrap;}
+.r-opt{display:flex;align-items:center;gap:7px;border:1px solid rgba(196,85,106,0.2);padding:9px 14px;cursor:pointer;font-size:0.85rem;color:var(--textmid);transition:all 0.2s;background:#fdf9f7;}
+.r-opt:hover,.r-opt:focus-within{border-color:var(--crimson);color:var(--crimson);}
+.r-opt input{accent-color:var(--crimson);width:13px;height:13px;cursor:pointer;}
+.cond{overflow:hidden;max-height:0;opacity:0;transition:max-height 0.4s,opacity 0.3s;}
+.cond.show{max-height:180px;opacity:1;}
+.btn-submit{width:100%;margin-top:8px;background:var(--crimson);color:#fff;border:none;padding:15px;font-family:'Lato',sans-serif;font-size:0.84rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;box-shadow:0 6px 22px rgba(139,26,47,0.26);}
+.btn-submit:hover{background:var(--rose);transform:translateY(-2px);}
+.toast{display:none;background:linear-gradient(135deg,#2C5F2E,#4A8C4D);color:#fff;padding:16px 22px;font-size:0.88rem;line-height:1.6;margin-top:18px;text-align:center;animation:fu .4s ease;}
+.toast.show{display:block;}
+@keyframes fu{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* ═══ CONTACT STRIP ═══ */
+.contact-strip{background:var(--darkbrown);padding:58px 28px;position:relative;overflow:hidden;}
+.contact-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(139,26,47,0.3) 0%, transparent 60%);pointer-events:none;}
+.contact-inner{max-width:1080px;margin:auto;display:flex;justify-content:center;gap:56px;flex-wrap:wrap;position:relative;z-index:1;}
+.ci{display:flex;gap:14px;align-items:flex-start;color:rgba(255,255,255,0.8);}
+.ci-ic{width:42px;height:42px;flex-shrink:0;background:rgba(139,26,47,0.4);border:1px solid rgba(139,26,47,0.5);display:flex;align-items:center;justify-content:center;font-size:1.05rem;}
+.ci-lb{font-size:0.63rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--goldlight);margin-bottom:3px;}
+.ci-vl{font-size:0.87rem;color:#fff;}
+.ci-vl a{color:#fff;text-decoration:none;}
+.sched{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:36px;}
+.day-bl{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-top:2px solid var(--rose);padding:13px 18px;text-align:center;min-width:105px;}
+.dn{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--goldlight);margin-bottom:4px;}
+.dh{font-size:0.8rem;color:rgba(255,255,255,0.65);}
+
+/* ═══ FOOTER ═══ */
+footer{background:#1A0E0A;text-align:center;padding:34px 20px;}
+footer::before{content:'';display:block;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--crimson),var(--gold),var(--crimson),transparent);margin-bottom:26px;}
+.f-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.7);margin-bottom:5px;}
+.f-logo em{font-style:italic;color:var(--rosepale);}
+.f-copy{font-size:0.7rem;color:rgba(255,255,255,0.28);letter-spacing:0.1em;}
+
+/* ═══ WA FLOAT ═══ */
+.wa{position:fixed;bottom:26px;right:26px;z-index:300;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 22px rgba(37,211,102,0.42);animation:wap 2.5s ease infinite;}
+.wa:hover{transform:scale(1.1);animation:none;}
+@keyframes wap{0%,100%{box-shadow:0 6px 22px rgba(37,211,102,0.42);}50%{box-shadow:0 6px 38px rgba(37,211,102,0.65);}}
+.wa svg{width:29px;height:29px;}
+
+/* Fade in */
+.fade{opacity:0;transform:translateY(22px);transition:opacity 0.7s,transform 0.7s;}
+.fade.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><em>Marilina</em> Martínez</div>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre mí</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#turno">Turno</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="nav-wa" href="https://wa.me/5493584300476" target="_blank">WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-deco-l"></div>
+
+  <!-- Flamenco rose ornaments -->
+  <svg class="rose-svg" style="top:55px;right:35px;width:200px;height:200px;opacity:0.07;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#8B1A2F" transform="translate(100,100)">
+      <ellipse rx="54" ry="20" transform="rotate(0)"/>
+      <ellipse rx="54" ry="20" transform="rotate(30)"/>
+      <ellipse rx="54" ry="20" transform="rotate(60)"/>
+      <ellipse rx="54" ry="20" transform="rotate(90)"/>
+      <ellipse rx="54" ry="20" transform="rotate(120)"/>
+      <ellipse rx="54" ry="20" transform="rotate(150)"/>
+      <circle r="13" fill="#B8945A"/>
+    </g>
+  </svg>
+  <svg class="rose-svg" style="bottom:50px;left:18px;width:150px;height:150px;opacity:0.055;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#B8945A" transform="translate(100,100)">
+      <ellipse rx="46" ry="17" transform="rotate(22)"/>
+      <ellipse rx="46" ry="17" transform="rotate(82)"/>
+      <ellipse rx="46" ry="17" transform="rotate(142)"/>
+      <ellipse rx="46" ry="17" transform="rotate(202)"/>
+      <circle r="10" fill="#8B1A2F"/>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-photo-frame">
+      <img src="marilina.jpg" class="hero-photo" alt="Lic. Marilina Martínez">
+    </div>
+    <div class="hero-text">
+      <div class="eyebrow">Psicopedagoga Clínica</div>
+      <h1 class="hero-name">Lic. <em>Marilina</em><br>Martínez</h1>
+      <p class="hero-title">Especialista en Neuropsicología y Aprendizaje</p>
+      <p class="hero-tagline">20 años acompañando a niños, familias y escuelas<br>en el camino del aprendizaje con respeto y dedicación.</p>
+      <div class="badges">
+        <span class="badge">TEA</span>
+        <span class="badge">Neuropsicología</span>
+        <span class="badge">Dislexia</span>
+        <span class="badge">Glifing · Wumbox</span>
+        <span class="badge">20 años de experiencia</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn-p" href="#turno">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Solicitar turno
+        </a>
+        <a class="btn-s" href="https://wa.me/5493584300476" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band"></div>
+
+<!-- ═══ SOBRE MÍ ═══ -->
+<div class="bg-ivory" id="sobre">
+  <div class="sec fade">
+    <div class="sec-hd">
+      <div class="sec-ey">Quién soy</div>
+      <h2 class="sec-ti">10 cosas sobre <em>Marilina</em></h2>
+      <div class="sec-rule"></div>
+      <p style="font-size:0.86rem;color:var(--textlight);margin-top:14px;font-style:italic;">…que hablan de su forma de acompañar 💫</p>
+    </div>
+    <div class="sobre-grid">
+      <div class="sobre-intro">
+        <p><strong>Pasión, formación constante y 20 años de experiencia</strong> que se reflejan en cada intervención.</p>
+        <p>Su mirada integra al <strong>niño 🌱</strong>, la <strong>familia 👨‍👩‍👧</strong> y la <strong>escuela 🏫</strong>, creando caminos posibles hacia el aprendizaje.</p>
+        <p>Promueve <strong>inclusión 🤝</strong>, confianza y bienestar emocional 💛 porque cree profundamente en el potencial de cada niño y en el valor de acompañar con respeto y dedicación 🌈</p>
+        <p>Trabaja con andamiajes y apoyos visuales apostando al trabajo conjunto entre el niño, la familia y la escuela. También coordina un <strong>taller de lectura comprensiva</strong>.</p>
+        <div class="quote-box">
+          <p>"Cuidemos la motivación y emocionalidad de los niños."</p>
+        </div>
+      </div>
+      <ul class="cosas">
+        <li>Pasión genuina por cada niño que acompaña en su proceso ❤️</li>
+        <li>Formación constante y actualización permanente 📚</li>
+        <li>20 años de experiencia sólida y comprobada 🧠</li>
+        <li>Mirada integral: niño, familia y escuela juntos 🌱</li>
+        <li>Promotora activa de la inclusión educativa 🤝</li>
+        <li>Genera confianza y bienestar desde el primer encuentro ✨</li>
+        <li>Especialista en neuropsicología y trastornos del aprendizaje 🔬</li>
+        <li>Diplomada en TEA con experiencia en el espectro 🌈</li>
+        <li>Certificada en plataformas Glifing y Wumbox 💻</li>
+        <li>Trabaja con apoyos visuales y equipo interdisciplinario 👨‍👩‍👧</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="band-thin"></div>
+
+<!-- ═══ SERVICIOS ═══ -->
+<div id="servicios">
+  <div class="sec fade">
+    <div class="sec-hd">
+      <div class="sec-ey">Área de trabajo</div>
+      <h2 class="sec-ti">Servicios <em>Profesionales</em></h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <span class="svc-icon">🧠</span>
+        <h3>Evaluación Psicopedagógica</h3>
+        <p>Diagnóstico integral de dificultades de aprendizaje, evaluación neurocognitiva e informes profesionales para orientar intervenciones.</p>
+        <span class="svc-tag">Diagnóstico</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">📖</span>
+        <h3>Trastornos del Aprendizaje</h3>
+        <p>Intervención especializada en dislexia, disgrafía, discalculia, TDAH y trastornos específicos, con metodologías basadas en evidencia.</p>
+        <span class="svc-tag">Intervención</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">🌟</span>
+        <h3>Trastorno del Espectro Autista</h3>
+        <p>Acompañamiento especializado para niños con TEA, integrando estrategias visuales, apoyos conductuales y trabajo en red.</p>
+        <span class="svc-tag">TEA · Inclusión</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">👨‍👩‍👧</span>
+        <h3>Orientación Familiar y Escolar</h3>
+        <p>Asesoramiento a familias y docentes para implementar estrategias inclusivas y apoyos visuales en el aula y el hogar.</p>
+        <span class="svc-tag">Familia · Escuela</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">💻</span>
+        <h3>Plataformas Glifing y Wumbox</h3>
+        <p>Programas digitales acreditados para la reeducación lectora y el tratamiento de la dislexia avalados por evidencia científica.</p>
+        <span class="svc-tag">Tecnología educativa</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">📚</span>
+        <h3>Taller de Lectura Comprensiva</h3>
+        <p>Espacio grupal donde los niños desarrollan estrategias de comprensión lectora en un ambiente motivador y contenedor.</p>
+        <span class="svc-tag">Grupal</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height:6px;background:linear-gradient(90deg,transparent,var(--crimson),var(--gold),var(--crimson),transparent);opacity:0.35;"></div>
+
+<!-- ═══ FORMACIÓN ═══ -->
+<div class="bg-dark" id="formacion">
+  <div class="sec fade">
+    <div class="sec-hd">
+      <div class="sec-ey">Credenciales</div>
+      <h2 class="sec-ti">Formación y <em>Especialización</em></h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="form-grid">
+      <div class="fi"><div class="fi-ic">🎓</div><div class="fi-tx"><strong>Licenciatura en Psicopedagogía</strong>Formación universitaria de base en psicopedagogía clínica</div></div>
+      <div class="fi"><div class="fi-ic">🧬</div><div class="fi-tx"><strong>Especialización en Neuropsicología</strong>Trastornos específicos del aprendizaje y evaluación neurocognitiva</div></div>
+      <div class="fi"><div class="fi-ic">📜</div><div class="fi-tx"><strong>Diplomada en TEA</strong>Intervención y acompañamiento en Trastorno del Espectro Autista</div></div>
+      <div class="fi"><div class="fi-ic">🎓</div><div class="fi-tx"><strong>Maestría en Psicología Cognitiva</strong>Aprendizaje y procesos cognitivos en contextos educativos</div></div>
+      <div class="fi"><div class="fi-ic">💻</div><div class="fi-tx"><strong>Certificada Glifing</strong>Plataforma acreditada para reeducación lectora y dislexia</div></div>
+      <div class="fi"><div class="fi-ic">💻</div><div class="fi-tx"><strong>Certificada Wumbox</strong>Plataforma educativa para intervención en dislexia</div></div>
+      <div class="fi" style="grid-column:1/-1"><div class="fi-ic">📚</div><div class="fi-tx"><strong>Formación y actualización permanente en Alfabetización y Dislexia</strong>A través de plataformas educativas especializadas, manteniéndose al día con los últimos avances científicos del área.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONSULTAS ═══ -->
+<div id="consultas">
+  <div class="sec fade">
+    <div class="sec-hd">
+      <div class="sec-ey">Información práctica</div>
+      <h2 class="sec-ti">Sobre las <em>Consultas</em></h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="info-row">
+      <div class="info-card"><div class="ic-lb">Modalidad</div><div class="ic-vl" style="font-size:1.1rem;">Presencial</div><div class="ic-sb">Sensory Espacio Terapéutico</div></div>
+      <div class="info-card"><div class="ic-lb">Experiencia</div><div class="ic-vl">20</div><div class="ic-sb">años de trayectoria</div></div>
+      <div class="info-card"><div class="ic-lb">Horarios</div><div class="ic-vl" style="font-size:1.05rem;">Lun–Vie</div><div class="ic-sb">Mañana y tarde · Consultar</div></div>
+      <div class="info-card"><div class="ic-lb">Obras Sociales</div><div class="ic-vl" style="font-size:1rem;">Consultar</div><div class="ic-sb">Según cobertura</div></div>
+    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.15rem;color:var(--darkbrown);margin-bottom:14px;">Medios de <em style="font-style:italic;color:var(--crimson)">Pago</em></h3>
+    <div class="pay-row">
+      <div class="pay-chip"><div class="pay-dot"></div>Efectivo</div>
+      <div class="pay-chip"><div class="pay-dot"></div>Transferencia bancaria</div>
+      <div class="pay-chip"><div class="pay-dot"></div>Mercado Pago</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TURNO ═══ -->
+<div class="bg-turno" id="turno">
+  <div class="sec fade">
+    <div class="sec-hd">
+      <div class="sec-ey">Agendá tu consulta</div>
+      <h2 class="sec-ti">Solicitud de <em>Turno</em></h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="form-box">
+      <svg style="position:absolute;top:12px;right:16px;width:65px;height:65px;opacity:0.07;pointer-events:none;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#8B1A2F" transform="translate(50,50)">
+          <ellipse rx="29" ry="11" transform="rotate(0)"/>
+          <ellipse rx="29" ry="11" transform="rotate(45)"/>
+          <ellipse rx="29" ry="11" transform="rotate(90)"/>
+          <ellipse rx="29" ry="11" transform="rotate(135)"/>
+          <circle r="7" fill="#B8945A"/>
+        </g>
+      </svg>
+      <div class="form-title">Consulta <em>previa</em> al turno</div>
+      <div class="form-sub">Completá el formulario y me comunico a la brevedad para coordinar tu turno 🌹</div>
+      <form id="turnForm" novalidate>
+        <div class="form-row">
+          <div class="fg">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" placeholder="Nombre y apellido" required>
+          </div>
+          <div class="fg">
+            <label for="tel">WhatsApp / Teléfono *</label>
+            <input type="tel" id="tel" placeholder="+54 358 …" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label for="edad">Edad del paciente *</label>
+            <input type="number" id="edad" placeholder="Ej: 8" min="3" max="18" required>
+          </div>
+          <div class="fg">
+            <label>Sexo del paciente *</label>
+            <div class="r-row">
+              <label class="r-opt"><input type="radio" name="sexo" value="Femenino" required> Femenino</label>
+              <label class="r-opt"><input type="radio" name="sexo" value="Masculino"> Masculino</label>
+              <label class="r-opt"><input type="radio" name="sexo" value="Otro"> Otro</label>
+            </div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>¿Ha recibido tratamiento psicopedagógico previo? *</label>
+          <div class="r-row">
+            <label class="r-opt"><input type="radio" name="trat" value="No" required onchange="toggleTrat(this.value)"> No</label>
+            <label class="r-opt"><input type="radio" name="trat" value="Sí" onchange="toggleTrat(this.value)"> Sí</label>
+          </div>
+        </div>
+        <div class="cond" id="tratDetalle">
+          <div class="fg">
+            <label for="tratDesc">Descripción breve del tratamiento previo</label>
+            <textarea id="tratDesc" placeholder="Tipo de intervención, duración, diagnóstico previo si lo hubiera…"></textarea>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="motivo">Motivo de consulta *</label>
+          <textarea id="motivo" placeholder="Describí brevemente qué observás o qué te preocupa del niño/a…" required style="min-height:78px;"></textarea>
+        </div>
+        <div class="fg">
+          <label for="email">Email (opcional)</label>
+          <input type="email" id="email" placeholder="tu@correo.com">
+        </div>
+        <button type="submit" class="btn-submit">Enviar solicitud de turno</button>
+      </form>
+      <div class="toast" id="okToast">✅ <strong>¡Solicitud enviada!</strong><br>Marilina se comunicará a la brevedad para confirmar tu turno. ¡Hasta pronto! 🌹</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTACTO ═══ -->
+<div class="contact-strip" id="contacto">
+  <div class="contact-inner">
+    <div class="ci"><div class="ci-ic">📱</div><div><div class="ci-lb">WhatsApp</div><div class="ci-vl"><a href="https://wa.me/5493584300476">+54 9 358 4300476</a></div></div></div>
+    <div class="ci"><div class="ci-ic">✉️</div><div><div class="ci-lb">Email</div><div class="ci-vl"><a href="mailto:marilinapmartinez21@gmail.com">marilinapmartinez21@gmail.com</a></div></div></div>
+    <div class="ci"><div class="ci-ic">📍</div><div><div class="ci-lb">Consultorio</div><div class="ci-vl">Sensory Espacio Terapéutico<br>Misiones 455 · Río Cuarto, Cba</div></div></div>
+  </div>
+  <div style="max-width:1080px;margin:36px auto 0;padding:0 28px;position:relative;z-index:1;">
+    <p style="text-align:center;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;">Horarios de atención</p>
+    <div class="sched">
+      <div class="day-bl"><div class="dn">Lunes</div><div class="dh">Mañana y tarde</div></div>
+      <div class="day-bl"><div class="dn">Martes</div><div class="dh">Mañana y tarde</div></div>
+      <div class="day-bl"><div class="dn">Miércoles</div><div class="dh">Mañana y tarde</div></div>
+      <div class="day-bl"><div class="dn">Jueves</div><div class="dh">Mañana y tarde</div></div>
+      <div class="day-bl"><div class="dn">Viernes</div><div class="dh">Mañana y tarde</div></div>
+    </div>
+    <p style="text-align:center;font-size:0.76rem;color:rgba(255,255,255,0.35);margin-top:10px;">Consultar disponibilidad horaria específica</p>
+  </div>
+</div>
+
+<footer>
+  <div class="f-logo">Lic. <em>Marilina Martínez</em></div>
+  <div class="f-copy">PSICOPEDAGOGA · RÍO CUARTO, CÓRDOBA · © 2026</div>
+</footer>
+
+<a class="wa" href="https://wa.me/5493584300476" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('in'); }), {threshold:0.1});
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+function toggleTrat(val){ document.getElementById('tratDetalle').classList.toggle('show', val==='Sí'); }
+
+document.getElementById('turnForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const n=document.getElementById('nombre').value.trim();
+  const t=document.getElementById('tel').value.trim();
+  const ed=document.getElementById('edad').value.trim();
+  const sx=document.querySelector('input[name="sexo"]:checked');
+  const tr=document.querySelector('input[name="trat"]:checked');
+  const mo=document.getElementById('motivo').value.trim();
+  if(!n||!t||!ed||!sx||!tr||!mo){ alert('Por favor completá todos los campos obligatorios (*).'); return; }
+  const td=document.getElementById('tratDesc').value.trim();
+  const em=document.getElementById('email').value.trim();
+  let msg=`*Solicitud de Turno — Sensory Espacio Terapéutico*\n\n`;
+  msg+=`👤 *Nombre:* ${n}\n📞 *Teléfono:* ${t}\n🎂 *Edad del paciente:* ${ed}\n⚧ *Sexo:* ${sx.value}\n🧠 *Tratamiento previo:* ${tr.value}\n`;
+  if(tr.value==='Sí'&&td) msg+=`   Detalle: ${td}\n`;
+  msg+=`💬 *Motivo:* ${mo}\n`;
+  if(em) msg+=`📧 *Email:* ${em}\n`;
+  window.open(`https://wa.me/5493584300476?text=${encodeURIComponent(msg)}`, '_blank');
+  document.getElementById('okToast').classList.add('show');
+  this.reset();
+  document.getElementById('tratDetalle').classList.remove('show');
+  setTimeout(()=>document.getElementById('okToast').classList.remove('show'), 7000);
+});
+</script>
+</body>
+</html>
